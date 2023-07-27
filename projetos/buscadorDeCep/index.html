@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+<!--        <link rel="stylesheet" href="style.css">-->
+<!--        <script src="main.js" defer></script>-->
+        <style>
+            body {
+                background-color: #f2f2f2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form {
+                background-color: #f2f2f2;
+                border-radius: 20px;
+                box-shadow: 10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 200px;
+            }
+
+            label {
+                display: block;
+            }
+
+            input {
+                background-color: #e6e6e6;
+                border-radius: 10px;
+                border: none;
+                color: #333333;
+                font-size: 16px;
+                padding: 10px;
+                margin-bottom:20px !important;
+                width: 200px;
+            }
+            button {
+                height: 40px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            button:active {
+                background: cadetblue;
+                color: aliceblue;
+            }
+            #cep {
+                box-shadow: 5px 5px 5px #cbced1,
+                -5px -5px 5px #ffffff;
+            }
+            #cep:focus {
+                box-shadow: inset 5px 5px 5px #cbced1,
+                inset -5px -5px 5px #ffffff;
+            }
+
+            input:focus {
+                outline:none !important;
+            }
+
+            form label:first-child input{
+                margin-top:0 !important;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- Inicio do formulario -->
+        <form id="formulario">
+            <header>
+                <label style="display: flex;flex-direction: column;align-items: center;height: 90px;justify-content: space-between;margin-bottom: 0;">Cep:
+                    <input placeholder="Digite o CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9" />
+                </label>
+                <div style="margin-bottom: 30px;display: flex;justify-content: space-between;">
+                    <button id="btn-cep">Pesquisar</button>
+                    <button id="btn-remover">Remover Pesquisa</button>
+                </div>
+            </header>
+
+            <label>Rua:
+                <input name="rua" type="text" id="rua"  readonly />
+            </label>
+            <label>Bairro:
+                <input name="bairro" type="text" id="bairro" readonly/>
+            </label>
+            <label>Cidade:
+                <input name="cidade" type="text" id="cidade"  readonly/>
+            </label>
+            <label>Estado:
+                <input name="uf" type="text" id="uf"  readonly/>
+            </label>
+        </form>
+
+
+
+
+
+        <script>
+            function limparFormulario() {
+                document.getElementById('rua').value=("");
+                document.getElementById('bairro').value=("");
+                document.getElementById('cidade').value=("");
+                document.getElementById('uf').value=("");
+                document.getElementById('cep').value=("");
+            }
+            function meu_callback(conteudo) {
+                if (!("erro" in conteudo)) {
+                    document.getElementById('rua').value=(conteudo.logradouro);
+                    document.getElementById('bairro').value=(conteudo.bairro);
+                    document.getElementById('cidade').value=(conteudo.localidade);
+                    document.getElementById('uf').value=(conteudo.uf);
+                } //end if.
+                else {
+                    limparFormulario();
+                    alert("CEP não encontrado.");
+                }
+            }
+            function pesquisacep(valor) {
+                let cep = valor.replace(/\D/g, '');
+
+                if (cep !== "") {
+                    let validacep = /^[0-9]{8}$/;
+
+                    if(validacep.test(cep)) {
+                        document.getElementById('rua').value="...";
+                        document.getElementById('bairro').value="...";
+                        document.getElementById('cidade').value="...";
+                        document.getElementById('uf').value="...";
+
+                        let script = document.createElement('script');
+
+                        script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+                        document.body.appendChild(script);
+
+                    } else {
+                        limparFormulario();
+                        alert("Formato de CEP inválido.");
+                    }
+                }
+            }
+
+
+
+            let btnCep = document.getElementById("btn-cep");
+            let btnRemover = document.getElementById("btn-remover");
+
+
+            btnCep.addEventListener("click", (evt) => {
+                let cep = document.getElementById("cep").value;
+                evt.preventDefault();
+                if (cep !== "") {
+                    return pesquisacep(document.getElementById("cep").value)
+                } else {
+                    alert("Digite um CEP para pesquisar")
+                }
+            })
+
+            btnRemover.addEventListener("click", (evt) => {
+                evt.preventDefault();
+                limparFormulario()
+            })
+        </script>
+    </body>
+</html>
