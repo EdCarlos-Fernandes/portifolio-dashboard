@@ -22519,21 +22519,6 @@ body.dark-version {
   background-image: none;
 }
 
-.form-check:not(.form-switch) .form-check-input[type="checkbox"]:after {
-  transition: opacity 0.25s ease-in-out;
-  font-family: "FontAwesome";
-  content: "\f00c";
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.67rem;
-  opacity: 0;
-}
-
 .form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
   background: #e91e63;
 }

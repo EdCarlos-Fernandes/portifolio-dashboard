@@ -1,4 +1,3 @@
-// Função para criar a tabela
 function criarTabela() {
     const data = [
         {
@@ -171,7 +170,6 @@ function criarTabela() {
             imgEtiqueta.alt = "Visto";
             imgEtiqueta.style.borderRadius = '10px 0 0 10px';
             spanStatus.appendChild(imgEtiqueta);
-
         } else if (item.status === "cursando") {
             const imgEtiqueta = document.createElement("img");
             spanStatus.textContent = ''; 
@@ -179,7 +177,6 @@ function criarTabela() {
             imgEtiqueta.alt = "X";
             imgEtiqueta.style.borderRadius = '10px 0 0 10px';
             spanStatus.appendChild(imgEtiqueta);
-
         }
 
         td2.appendChild(spanStatus);
@@ -206,12 +203,8 @@ function criarTabela() {
     table.appendChild(thead);
     table.appendChild(tbody);
 
-    // Encontrando a div com a classe "cursos1"
     const divCursos1 = document.querySelector('.cursos1');
-
-
     divCursos1.appendChild(table);
-
 }
 
 // Chamando a função para criar a tabela

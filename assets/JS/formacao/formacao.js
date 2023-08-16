@@ -1,4 +1,3 @@
-// Função para criar o card com base nos dados fornecidos
 function createCard(bgGradientClass, title, description, color, totalSteps, finishedSteps) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'col-lg-4 col-md-6 mt-4 mb-4';
@@ -51,7 +50,7 @@ function createCard(bgGradientClass, title, description, color, totalSteps, fini
     return cardDiv;
 }
 
-// Função para adicionar os cards dos cursos e das guias à classe .formacao11
+
 async function addCardsToFormacao11(data) {
     const formacao11Div = document.querySelector('.formacao11');
 
@@ -90,7 +89,7 @@ async function addCardsToFormacao11(data) {
     formacao11Div.appendChild(uninoveCard);
 }
 
-// Função para criar a tabela
+
 async function createTable(data) {
     // Dados da tabela
     const tableData = [
@@ -145,7 +144,7 @@ async function createTable(data) {
     });
 }
 
-// Função para fazer a requisição à API
+
 async function fetchAPI(url) {
     try {
         const response = await fetch(url, { mode: 'cors' });
@@ -156,7 +155,7 @@ async function fetchAPI(url) {
     }
 }
 
-// Fazer a chamada à API
+
 fetchAPI('https://www.alura.com.br/api/dashboard/01180f41aaf721134ab0704a0a107fc0cae72f874d491d07187ad6d548f1aa98')
     .then(data => {
         addCardsToFormacao11(data);

@@ -1,4 +1,3 @@
-// Função auxiliar para criar elementos com atributos
 function createAndSetAttributes(elementType, attributes) {
     const element = document.createElement(elementType);
     for (const attribute in attributes) {
@@ -9,7 +8,6 @@ function createAndSetAttributes(elementType, attributes) {
 
 
 
-// Criação do cabeçalho
 const sideNavHeader = createAndSetAttributes('div', {
     className: 'sidenav-header',
 });
@@ -39,7 +37,6 @@ document.querySelector('.aSide1').appendChild(createAndSetAttributes('hr', {
 
 
 
-// Criação do menu lateral
 const sideNavMenu = createAndSetAttributes('div', {
     className: 'collapse navbar-collapse w-auto',
     id: 'sidenav-collapse-main',
@@ -53,8 +50,6 @@ sideNavMenu.appendChild(ul);
 
 
 
-
-// Função para criar os itens do menu lateral
 function createNavItem(icon, text, link) {
     const li = createAndSetAttributes('li', {
         className: 'nav-item',
@@ -102,10 +97,9 @@ function createNavItem(icon, text, link) {
 
 
 // Criação dos itens do menu lateral
-createNavItem('person', 'Perfil', '../../../paginas/perfil.html');
+createNavItem('person', 'Perfil', '../../../index.html');
 createNavItem('layers', 'Formação', '../../../paginas/formacao.html');
 createNavItem('import_contacts', 'Habilidades Técnicas', '../../../paginas/tables.html');
-createNavItem('label', 'Etiquetas usáveis', '../../../paginas/badges.html');
 
 document.querySelector('.aSide1').appendChild(createAndSetAttributes('hr', {
     className: 'horizontal light mt-0 mb-2',

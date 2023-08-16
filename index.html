@@ -2,91 +2,250 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <meta property="og:title" content="Ed Fernandes">
-    <meta property="og:description" content="Olá! sou desenvolvedor web. Neste site, eu quero compartilhar com você as minhas paixões e projetos.">
-    <meta property="og:image" content="https://devfernandes.com.br/IMGS/eddyBanner.jpg">
-    <meta property="og:url" content="https://devfernandes.com.br">
-    <title>Login - ED</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link id="pagestyle" href="assets/css/style.css" rel="stylesheet" />
-    
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/img/shapes/ed.png">
+  <title>Perfil - ED</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link id="pagestyle" href="./assets/css/style.css" rel="stylesheet" />
+
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body class="bg-gray-200" style="height: 100vh !important;">
-  <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
-      <span class="mask bg-gradient-dark opacity-6"></span>
-      <div class="container my-auto">
+<body class="g-sidenav-show bg-gray-200 ">
+  <aside
+    class="aSide1 sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+    id="sidenav-main">
+  </aside>
+
+  <div class="main-content position-relative max-height-vh-100 h-100 perfil">
+    <div class="container-fluid px-2 px-md-4">
+      <div class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('https://media.licdn.com/dms/image/D4D16AQH5bTgoshQW5w/profile-displaybackgroundimage-shrink_350_1400/0/1689683330863?e=1695254400&v=beta&t=mhn8Z6iHzW_fXfcXwuSzFWgRNVCX6JrLZcOIjVItr6Q');">
+        <span class="mask  bg-gradient-primary  opacity-6"></span>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-absolute"
+          id="navbarBlur" data-scroll="true" style="top: 5px;right: 5px;">
+          <div class="container-fluid py-1 px-3">
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+              <ul>
+                <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                  <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                    <div class="sidenav-toggler-inner">
+                      <i class="sidenav-toggler-line"></i>
+                      <i class="sidenav-toggler-line"></i>
+                      <i class="sidenav-toggler-line"></i>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+
+      </div>
+
+      <div class="card card-body mx-3 mx-md-4 mt-n6 bg-gradient-dark">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="https://media.licdn.com/dms/image/D4D03AQGjLsYvKfaFDg/profile-displayphoto-shrink_200_200/0/1689685044093?e=1695254400&v=beta&t=5srEHcVFgrhYOuZtS4XgOiqzlVi4XBnOX3qSJgx2LCo"
+                alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+            </div>
+          </div>
+
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h5 class="mb-1">
+                Ed Fernandes
+              </h5>
+              <p class="mb-0 font-weight-normal text-sm" style="color: #e91e63 !important;">
+                Desenvolvedor Front-End
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+            <div class="nav-wrapper position-relative end-0">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Perfil</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Projetos</button>
+                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</button>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
-          <div class="col-lg-4 col-md-8 col-12 mx-auto">
-            <div class="card z-index-0 fadeIn3 fadeInBottom">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                  <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Ed Fernandes</h4>
-                  <div class="row mt-3">
-                    <div class="col-2 text-center ms-auto">
-                      <a class="btn btn-link px-3" href="https://devfernandes.com.br">
-                        <i class="fa fa-link text-white text-lg"></i>
-                      </a>
+          <div class="tab-content" id="nav-tabContent">
+            <!-- Perfil-->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+              tabindex="0">
+              <div class="d-flex">
+                <div class="col-12 col-xl-4">
+                  <div class="card card-plain h-100 d-flex">
+                    <div class="card-header pb-0 p-3" style="background-color: #fff0;">
+                      <div class="row">
+                        <div class="col-md-8 d-flex align-items-center">
+                          <h6 class="mb-0">Informações do perfil</h6>
+                        </div>
+                        <p class="text-sm">
+                          Iniciei como um entusiasta de tecnologia, e devido a isso, hoje curso Análise e
+                          Desenvolvimento de Sistemas, onde tenho um grande interesse em desenvolvimento web.
+                          Atualmente, estou dedicado aos meus estudos, aprimorando minhas habilidades em Angular, SQL e
+                          TypeScript.
+                        </p>
+                        <hr class="horizontal gray-light my-4">
+                      </div>
                     </div>
-                    <div class="col-2 text-center px-1">
-                      <a class="btn btn-link px-3" href="https://www.linkedin.com/in/edcarlos-fernandes">
-                        <i class="fa fa-linkedin text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center me-auto">
-                      <a class="btn btn-link px-3" href="https://github.com/EdCarlos-Fernandes">
-                        <i class="fa fa-github text-white text-lg"></i>
-                      </a>
+
+                    <div class="card-body p-3">
+                      <ul class="list-group" style="background-color: #fff0;">
+                        <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nome
+                            completo:</strong> &nbsp; Ed Carlos Fernandes.S.Jr</li>
+                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Celular:</strong>
+                          &nbsp; (11) 91765-8554</li>
+                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong>
+                          &nbsp; edcarlosfernandes017@gmail.com</li>
+                        <li class="list-group-item border-0 ps-0 pb-0">
+                          <strong class="text-dark text-sm">Social:</strong> &nbsp;
+                          <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0"
+                            href="https://www.linkedin.com/in/edcarlos-fernandes" target="_blank">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                          </a>
+                          <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0"
+                            href="https://github.com/EdCarlos-Fernandes" target="_blank">
+                            <i class="fab fa-github fa-lg"></i>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <form role="form" class="text-start">
-                  <div class="input-group input-group-outline my-3">
-                    <label class="form-label" for="inputemail1"></label>
-                    <input type="email" class="form-control" id="inputemail1" placeholder="Digite seu E-mail" value="Exemplo@exemplo.com" required>
-                  </div>
-                  <div class="input-group input-group-outline mb-3">
-                    <label class="form-label" for="inputNome1"></label>
-                    <input type="password" class="form-control" id="inputNome1" placeholder="Digite sua Senha" value="Exemplo@exemplo.com" required>
-                  </div>
-                  <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
-                    <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
-                  </div>
-                  <div class="text-center">
-                    <a class="btn bg-gradient-primary w-100 my-4 mb-2" href="./paginas/perfil.html">Login</a>
-                  </div>
-                  <p class="mt-4 text-sm text-center">
-                    Don't have an account?
-                    <a href="./paginas/sign-up.html" class="text-primary text-gradient font-weight-bold">Registrar</a>
-                  </p>
-                </form>
+            </div>
+            <!-- Fim perfil-->
+
+            <!-- projetos-->
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+              <div class="col-12 mt-4">
+                <div class="mb-5 ps-3">
+                  <h6 class="mb-1">Projetos</h6>
+                </div>
+
+                <div class="row projetos">
+                </div>
               </div>
             </div>
+            <!--Fim projetos-->
+
+
+            <!-- Contato-->
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+              <form class="row g-3 d-flex flex-column align-items-center" id="contactForm">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label" style="color: aliceblue;">Nome</label>
+                  <input type="text" required class="form-control border p-2" id="inputEmail4"
+                    style="color: aliceblue;">
+                </div>
+                <div class="col-md-6">
+                  <label for="email1" class="form-label" style="color: aliceblue;">E-mail</label>
+                  <input type="email" required class="form-control border p-2" id="email1" style="color: aliceblue;">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label" style="color: aliceblue;">Mensagem</label>
+                  <textarea type="text" required class="form-control border p-2" id="inputCity"
+                    style="height: 100px;max-height: 135px;min-height: 30px;color: aliceblue;"></textarea>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary" style="width: 155px;">Enviar</button>
+                </div>
+              </form>
+            </div>
+            <!-- Fim contato-->
           </div>
         </div>
       </div>
     </div>
-  </main>
 
 
-  <script src="../assets/JS/main.js"></script>
-  <script src="../assets/JS/perfil/aside.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <footer class="footer py-4 ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              © <script>
+                document.write(new Date().getFullYear())
+              </script>
+              <a href="https://www.linkedin.com/in/edcarlos-fernandes" class="font-weight-bold" target="_blank">Ed
+                Fernandes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('inputEmail4').value;
+      const email = document.getElementById('email1').value;
+      const message = document.getElementById('inputCity').value;
+      const emailBody = `Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`;
+
+      try {
+        const response = await fetch('https://formspree.io/f/mvojgveb', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message
+          })
+        });
+
+        if (response.ok) {
+          alert('E-mail enviado com sucesso!');
+        } else {
+          alert('Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente.');
+        }
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+        alert('Ocorreu um erro na requisição. Por favor, tente novamente.');
+      }
+    });
+  </script>
+
+  <script src="./assets/JS/main.js"></script>
+  <script src="./assets/JS/iSide/asideMenu.js"></script>
+  <script src="./assets/JS/projetos/projetos.js" type="module"></script>
+  <script src="./assets/JS/projetos/projectsData.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

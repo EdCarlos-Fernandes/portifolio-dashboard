@@ -1,4 +1,3 @@
-// Função para criar a tabela
 function criarTabela() {
     const data = [
         {
@@ -17,12 +16,11 @@ function criarTabela() {
             dataTermino: "",
         },
     ];
-    // Ordenar o array de cursos por data de término e, em seguida, por nome em ordem alfabética
+    
     data.sort((a, b) => {
         const dataTerminoA = new Date(a.dataTermino.split('/').reverse().join('/'));
         const dataTerminoB = new Date(b.dataTermino.split('/').reverse().join('/'));
 
-        // Ordenar por data de término em ordem crescente
         if (dataTerminoA < dataTerminoB) {
             return -1;
         } else if (dataTerminoA > dataTerminoB) {
@@ -91,7 +89,6 @@ function criarTabela() {
             imgEtiqueta.alt = "etiqueta comprovante de curso completo";
             imgEtiqueta.style.borderRadius = '10px 0 0 10px';
             spanStatus.appendChild(imgEtiqueta);
-
         } else if (item.status === "cursando") {
             const imgEtiqueta = document.createElement("img");
             spanStatus.textContent = ''; 
@@ -109,20 +106,13 @@ function criarTabela() {
 
         tr.appendChild(td1);
         tr.appendChild(td2);
-
         tbody.appendChild(tr);
     });
 
     table.appendChild(thead);
     table.appendChild(tbody);
 
-    // Encontrando a div com a classe "cursos1"
     const divCursos1 = document.querySelector('.cursos2');
-
-
     divCursos1.appendChild(table);
-
 }
-
-// Chamando a função para criar a tabela
 criarTabela();
